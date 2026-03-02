@@ -1,4 +1,5 @@
-# 📝 FastAPI-Minimal-CRUD Educational Task Manager API
+# 📝 fastapi-minimal-CRUD 
+## Educational Task Manager API
 
 A minimalist, containerized REST API built with **Python**, **FastAPI**, and **SQLAlchemy**. This project is designed for educational purposes to demonstrate the full lifecycle of HTTP methods, containerization, and ORM integration using SQLite.
 
@@ -42,14 +43,15 @@ This command builds the minimal image and starts the server.
 
 
 ### API Endpoints
-| Method      | Endpoint         | Description                                     |
-| :---        |    :----:        |                                            ---: |
+| Method      | Endpoint         |  Description                                    |  
+| :---        | :----            | :---                                            |
 | **GET**     | `/api/tasks`     | Retrieve all tasks from the database.           |
 | **POST**    | `/api/tasks`     | Create a new task. (Do not include `task_id`).s |
 | **PUT**     | `/api/tasks{id}` | Update/Replace an existing task by ID.          |
 | **DELETE**  | `/api/tasks{id}` | Remove a task from the database.                |
 
 ### Example Request (Create Task)
+```bash
 curl -X 'POST' \
   'http://localhost:8000/api/tasks' \
   -H 'Content-Type: application/json' \
@@ -57,9 +59,10 @@ curl -X 'POST' \
   "title": "Learn Docker and FastAPI",
   "completed": false
 }'
+```
 
-🏗 Project Structure
-`main.py` - Contains the API logic, SQLAlchemy models, and Pydantic schemas.
-`Dockerfile` - Multi-stage build using Alpine Linux for size optimization.
-`docker-compose.yml` - Orchestrates the container and persists the `test.db file.
-`test.db` - SQLite database file (generated automatically).
+### 🏗 Project Structure
+- `main.py` - Contains the API logic, SQLAlchemy models, and Pydantic schemas.
+- `Dockerfile` - Multi-stage build using Alpine Linux for size optimization.
+- `docker-compose.yml` - Orchestrates the container and persists the `test.db file.
+- `test.db` - SQLite database file (generated automatically).
