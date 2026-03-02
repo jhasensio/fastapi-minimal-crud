@@ -66,3 +66,48 @@ curl -X 'POST' \
 - `Dockerfile` - Multi-stage build using Alpine Linux for size optimization.
 - `docker-compose.yml` - Orchestrates the container and persists the `test.db file.
 - `test.db` - SQLite database file (generated automatically).
+
+### 🐍 Running Locally (Native Python)
+
+If you prefer not to use Docker, you can run the API directly on your machine using a Virtual Environment (`venv`).
+
+### 1. Create and Activate a Virtual Environment
+This keeps the project dependencies isolated from your system Python.
+
+**Windows:**
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+**macOS/Linux:**
+```bash
+python3 -m venv venv
+source venv\bin\activate
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+#### Create the `requirements.txt`
+```bash
+fastapi[standard]
+sqlalchemy
+requests
+```
+
+### Launch the Server
+Use `fastapi dev` for a development environment with auto-reload (restarts whenever you save `main.py`):
+```bash
+fastapi dev main.py
+```
+_The API will be available at: `http://127.0.0.1:8000/api/tasks`_
+
+
+### Testing the installation 
+```bash
+# Run the automated test script
+python test_api.py
+```
+
